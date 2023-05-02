@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head><style>
+    body {
+        background-color: blue;
+    }
+
+</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista1 Ex09</title>
+    <link rel="stylesheet" href="css/ex09.css">
+    <script language="javascript" type="text/javascript">
+function rendimentoo(){
+    var n2 = document.getElementById("quantia").value;
+    var n3 = document.getElementById("meses").value;
+    var n4 = document.getElementById("resultadoo");
+var n7 = (Number(n2) * Number(n3)) * 0.75 / 100 
+  resultadoo.innerHTML = `O rendimento será de ${n7} R$ ao mês`;
+}
+
+    </script>
+</head>
+<body>
+    <h1 class="a1"><div style="color: darkorange;">Nome: Italo Gabriel De Oliveira </br> 
+        Turma: OADSNM11AC</h1></div> 
+        
+    </br>
+    Valor Depositado:  
+    <input type="number" id="quantia"></br>
+</br>
+Meses decorrentes na conta da poupança:
+<input type="number" id="meses"></br>
+<input type="button" value="CALCULAR" onclick="rendimentoo()">
+</br></br>
+<div id="resultadoo"> Rendimento final </div>

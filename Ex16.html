@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head><style>
+	body {
+		background-color: blue;
+	}
+
+</style>
+	<title>Lista1 Ex16</title>
+	<meta charset="UTF-8">
+	<script>
+		function calcularMedia() {
+			// Obter os valores dos campos de entrada
+			var nome = document.getElementById("nome").value;
+			var nota1 = parseFloat(document.getElementById("nota1").value);
+			var nota2 = parseFloat(document.getElementById("nota2").value);
+			var nota3 = parseFloat(document.getElementById("nota3").value);
+
+			// Calcular a média aritmética
+			var media = (nota1 + nota2 + nota3) / 3;
+
+			// Verificar a menção do aluno
+			var mencao;
+			if (media >= 7) {
+				mencao = "Aprovado";
+			} else if (media >= 5.1) {
+				mencao = "Recuperação";
+			} else {
+				mencao = "Reprovado";
+			}
+
+			// Exibir o resultado na página
+			var mensagem = "O aluno " + nome + " obteve média " + media.toFixed(2) + " e está " + mencao + ".";
+			document.getElementById("resultado").innerHTML = mensagem;
+		}
+	</script>
+</head>
+<body>
+	<div style="color: darkorange;"><h1> Nome: Italo Gabriel De Oliveira</h1>
+	<h2> Turma: OADSNM11AC </h2></div>
+	<p>Informe o nome e as três notas obtidas pelo aluno:</p>
+	<form>
+		Nome: <input type="text" id="nome"><br>
+		Nota 1: <input type="text" id="nota1"><br>
+		Nota 2: <input type="text" id="nota2"><br>
+		Nota 3: <input type="text" id="nota3"><br>
+		<input type="button" value="Calcular Média" onclick="calcularMedia()">
+	</form>
+	<p id="resultado"></p>
+</body>
+</html>

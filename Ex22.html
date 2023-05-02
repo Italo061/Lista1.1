@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head><style>
+	body {
+		background-color: blue;
+	}
+</style>
+	<title>Lista1 Ex22</title>
+</head>
+<body>
+	<div style="color: darkorange;"><h1>Nome:Italo Gabriel De Oliveira</h1>
+    <h2>Turma: OADSNM11AC</h2></div>
+    <p>Preencha os valores de custo e venda dos 40 produtos:</p>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Produto</th>
+				<th>Preço de Custo</th>
+				<th>Preço de Venda</th>
+				<th>Lucro/Prejuízo</th>
+			</tr>
+		</thead>
+		<tbody id="produtos">
+		</tbody>
+		<tfoot>
+			<tr>
+				<th>Média de Preço de Custo:</th>
+				<td id="mediaCusto"></td>
+				<th>Média de Preço de Venda:</th>
+				<td id="mediaVenda"></td>
+			</tr>
+		</tfoot>
+	</table>
+
+	<script>
+		let produtos = [];
+		let totalCusto = 0;
+		let totalVenda = 0;
+
+		for(let i=1; i<=40; i++){
+			let custo = parseFloat(prompt(`Digite o preço de custo do Produto ${i}:`));
+			let venda = parseFloat(prompt(`Digite o preço de venda do Produto ${i}:`));
+
+			let lucroPrejuizo = venda - custo;
+			let resultado = "";
+
+			if(lucroPrejuizo > 0){
+				resultado = "Lucro";
+			} else if(lucroPrejuizo < 0){
+				resultado = "Prejuízo";
+			} else {
+				resultado = "Empate";
+			}
+
+			totalCusto += custo;
+			totalVenda += venda;
+
+			produtos.push(`
+				<tr>
+					<td>Produto ${i}</td>
+					<td>R$ ${custo.toFixed(2)}</td>
+					<td>R$ ${venda.toFixed(2)}</td>
+					<td>${resultado}</td>
+				</tr>
+			`);
+		}
+
+		document.getElementById("produtos").innerHTML = produtos.join("");
+
+		let mediaCusto = totalCusto / 40;
+		let mediaVenda = totalVenda / 40;
+
+		document.getElementById("mediaCusto").innerHTML = `R$ ${mediaCusto.toFixed(2)}`;
+		document.getElementById("mediaVenda").innerHTML = `R$ ${mediaVenda.toFixed(2)}`;
+	</script>
+</body>
+</html>

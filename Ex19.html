@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-color: blue;
+		}
+	</style>	
+	<title>Lista1 Ex19</title>
+</head>
+<body>
+	<div style="color: darkorange;"><h1> Nome: Italo Gabriel De Oliveira</h1>
+	<h2> Turma: OADSNM11AC </h2></div>
+	<p>Preencha o formulário abaixo:</p>
+	<form>
+			<legend>Pessoa 1</legend>
+			<label for="nome1">Nome:</label>
+			<input type="text" id="nome1" name="nome1"><br>
+			<label for="sexo1">Sexo:</label>
+			<input type="radio" id="sexo1m" name="sexo1" value="masculino">
+			<label for="sexo1m">Masculino</label>
+			<input type="radio" id="sexo1f" name="sexo1" value="feminino">
+			<label for="sexo1f">Feminino</label>
+		<!-- adicione mais fieldsets para as outras pessoas -->
+		<button type="button" onclick="contar()">Contar</button>
+	</form>
+	<p id="resultado"></p>
+	<script>
+		function contar() {
+			let totalHomens = 0;
+			let totalMulheres = 0;
+			for (let i = 1; i <= 56; i++) {
+				let nome = document.getElementById("nome" + i).value;
+				let sexo = document.querySelector('input[name="sexo' + i + '"]:checked').value;
+				let resultado = document.getElementById("resultado");
+				if (sexo === "masculino") {
+					totalHomens++;
+					resultado.innerHTML += nome + " é homem<br>";
+				} else {
+					totalMulheres++;
+					resultado.innerHTML += nome + " é mulher<br>";
+				}
+			}
+			resultado.innerHTML += "<br>Total de homens: " + totalHomens + "<br>";
+			resultado.innerHTML += "Total de mulheres: " + totalMulheres;
+		}
+	</script>
+</body>
+</html>

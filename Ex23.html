@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-color: blue;
+		}
+	</style>
+	<title>Lista1 Ex23</title>
+</head>
+<body>
+	<div style="color: darkorange;"><h1>Nome: Italo Gabriel De Oliveira</h1>
+	<h2> Turma: OADSNM11AC </h2></div>
+	<label for="numero">Digite um número:</label>
+	<input type="number" id="numero" name="numero">
+	<button onclick="verificarNumero()">Verificar</button>
+	<p id="resultado"></p>
+
+	<script>
+		function verificarNumero() {
+			let numero = document.getElementById("numero").value;
+			let resultado = document.getElementById("resultado");
+
+			if (numero > 80) {
+				resultado.innerHTML = "O número é maior que 80.";
+			} else if (numero < 25) {
+				resultado.innerHTML = "O número é menor que 25.";
+			} else if (numero == 40) {
+				resultado.innerHTML = "O número é igual a 40.";
+			} else {
+				resultado.innerHTML = "O número não se enquadra nos critérios definidos.";
+			}
+		}
+	</script>
+</body>
+</html>

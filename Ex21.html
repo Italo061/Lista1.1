@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-color: blue;
+		}
+	</style>
+	<title>Lista1 Ex21</title>
+</head>
+<body>
+
+	<div style="color: darkorange;"><h1>Nome: Italo Gabriel De Oliveira</h1>
+	<h2>Turma: OADSNM11AC </h2></div>
+
+	<p>Informe os dados das pessoas:</p>
+
+	<form id="form-dados">
+		<label for="nome">Nome:</label>
+		<input type="text" id="nome">
+
+		<label for="sexo">Sexo:</label>
+		<select id="sexo">
+			<option value="M">Masculino</option>
+			<option value="F">Feminino</option>
+		</select>
+
+		<label for="idade">Idade:</label>
+		<input type="number" id="idade">
+
+		<label for="saude">Saúde:</label>
+		<select id="saude">
+			<option value="S">Saudável</option>
+			<option value="N">Não saudável</option>
+		</select>
+
+		<button type="button" onclick="verificarAptidao()">Verificar aptidão</button>
+	</form>
+
+	<div id="resultado"></div>
+
+	<script>
+		let totalAptos = 0;
+		let totalInaptos = 0;
+
+		function verificarAptidao() {
+			const nome = document.getElementById("nome").value;
+			const sexo = document.getElementById("sexo").value;
+			const idade = parseInt(document.getElementById("idade").value);
+			const saude = document.getElementById("saude").value;
+
+			let apto = false;
+
+			if (sexo === "M" && idade >= 18 && saude === "S") {
+				apto = true;
+			} else if (sexo === "F" && idade >= 18 && idade <= 45 && saude === "S") {
+				apto = true;
+			}
+
+			if (apto) {
+				totalAptos++;
+				document.getElementById("resultado").innerHTML += nome + " está apto(a) para cumprir o serviço militar obrigatório.<br>";
+			} else {
+				totalInaptos++;
+				document.getElementById("resultado").innerHTML += nome + " não está apto(a) para cumprir o serviço militar obrigatório.<br>";
+			}
+
+			document.getElementById("resultado").innerHTML += "Total de aptos: " + totalAptos + "<br>";
+			document.getElementById("resultado").innerHTML += "Total de inaptos: " + totalInaptos + "<br><br>";
+		}
+	</script>
+
+</body>
+</html>

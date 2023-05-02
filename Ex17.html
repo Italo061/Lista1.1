@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-color: blue;
+		}
+
+	</style>
+	<title>Lista1 Ex17</title>
+</head>
+<body>
+	<div style="color: darkorange;"><h1> Nome: Italo Gabriel De Oliveira</h1>
+	<h2> Turma: OADSNM11AC </h2></div>
+	<p>Digite 80 números abaixo:</p>
+	<form>
+		<input type="text" id="num1">
+		<input type="text" id="num2">
+		<!-- repetir o input de número 80 vezes -->
+		<button type="button" onclick="contarNumeros()">Contar números</button>
+	</form>
+	<p id="resultado"></p>
+
+	<script>
+		function contarNumeros() {
+			let contador = 0;
+			for (let i = 1; i <= 80; i++) {
+				let inputNum = document.getElementById("num" + i);
+				let num = Number(inputNum.value);
+				if (num >= 10 && num <= 150) {
+					contador++;
+				}
+			}
+			document.getElementById("resultado").innerHTML = "Existem " + contador + " números no intervalo entre 10 e 150.";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <style>
+		body {
+			background-color: blue;
+		}
+
+	</style>
+    <title>Lista1 Ex18</title>
+  </head>
+  <body>
+    <div style="color: darkorange;"><h1> Nome: Italo Gabriel De Oliveira</h1>
+    <h2> Turma: OADSNM11AC </h2></div>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome">
+    <br>
+    <label for="sexo">Sexo:</label>
+    <select id="sexo">
+      <option value="M">Masculino</option>
+      <option value="F">Feminino</option>
+    </select>
+    <br>
+    <button onclick="adicionarPessoa()">Adicionar pessoa</button>
+    <br>
+    <br>
+    <h3>Pessoas cadastradas:</h3>
+    <ul id="lista-pessoas"></ul>
+    <br>
+    <h3>Resultado:</h3>
+    <p id="resultado"></p>
+
+    <script>
+      // Inicialização de variáveis
+      let listaPessoas = [];
+      let numHomens = 0;
+      let numMulheres = 0;
+
+      // Função que adiciona uma pessoa na lista
+      function adicionarPessoa() {
+        let nome = document.getElementById("nome").value;
+        let sexo = document.getElementById("sexo").value;
+
+        if (nome === "") {
+          alert("Por favor, informe o nome da pessoa.");
+          return;
+        }
+
+        let pessoa = {
+          nome: nome,
+          sexo: sexo === "M" ? "homem" : "mulher",
+        };
+
+        listaPessoas.push(pessoa);
+
+        // Atualiza a lista de pessoas exibida na página
+        atualizarListaPessoas();
+
+        // Atualiza o resultado exibido na página
+        atualizarResultado();
+      }
+
+      // Função que atualiza a lista de pessoas exibida na página
+      function atualizarListaPessoas() {
+        let listaPessoasHtml = "";
+
+        for (let i = 0; i < listaPessoas.length; i++) {
+          listaPessoasHtml += "<li>" + listaPessoas[i].nome + " - " + listaPessoas[i].sexo + "</li>";
+        }
+
+        document.getElementById("lista-pessoas").innerHTML = listaPessoasHtml;
+      }
+
+      // Função que atualiza o resultado exibido na página
+      function atualizarResultado() {
+        numHomens = 0;
+        numMulheres = 0;
+
+        for (let i = 0; i < listaPessoas.length; i++) {
+          if (listaPessoas[i].sexo === "homem") {
+            numHomens++;
+          } else {
+            numMulheres++;
+          }
+        }
+
+        let resultadoHtml = "Total de homens: " + numHomens + "<br>";
+        resultadoHtml += "Total de mulheres: " + numMulheres;
+
+        document.getElementById("resultado").innerHTML = resultadoHtml;
+      }
+    </script>
+  </body>
+</html>

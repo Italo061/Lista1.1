@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <style>
+		body {
+			background-color: blue;
+		}
+
+	</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista1 Ex08</title>
+    <link rel="stylesheet" href="css/ex08.css">
+    <script language="javascript" type="text/javascript">
+function conversao(){
+    var n1 = document.getElementById("real").value;
+    var n2 = document.getElementById("dolar").value;
+    var n4 = document.getElementById("res");;
+var n7 = (Number(n1) / Number(n2));
+  n4.innerHTML =` O Usuário vai possuir ${n7} USD`;
+}
+
+    </script>
+</head>
+<body>
+    <h1> <div style="color: darkorange;"><h1 class="t1"> Nome: Italo Gabriel De Oliveira </br> </div>
+        <div style="color: darkorange;">Turma: OADSNM11AC</h1></div>
+      Valor em real (R$):
+        <input type="number" id="real"></br>
+    </br>
+    Valor do Dolar (USD): 
+    <input type="number" id="dolar"></br>
+<input type="button" value="CALCULAR" onclick="conversao()">
+</br></br>
+<div id="res"> Resultado </div>
+</body>
+</html>

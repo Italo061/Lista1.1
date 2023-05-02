@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head><style>
+    body {
+        background-color: blue;
+    }
+
+</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista1 Ex04</title>
+    <link rel="stylesheet" href="css/ex05.css">
+    <script language="javascript" type="text/javascript">
+function salario(){
+    var n1 = document.getElementById("vendedor").value;
+    var n2 = document.getElementById("salarioo").value;
+    var n3 = document.getElementById("vendas").value;
+    var n4 = document.getElementById("comissao");
+var n7 = (Number(n2) + Number(n3)) / 100 * 15 + (Number (n2));
+  comissao.innerHTML = `O vendedor ${n1} receberá um salário base ${n2} crescido de 15% de comissão sobre suas vendas, totalizando seu salário final. ${n7}`;
+}
+
+    </script>
+</head>
+<body>
+    <div style="color: darkorange;"><h1 class="k1"> Nome: Italo Gabriel De Oliveira </br> </div>
+        <div style="color: darkorange;">Turma: OADSNM11AC</h1></div>
+        <h2> :O </h2>
+        Nome:
+        <input type="text" id="vendedor"></br>
+    </br>
+    Sálario Bruto: 
+    <input type="number" id="salarioo"></br>
+</br>
+Vendas feitas no mês em $:
+<input type="number" id="vendas"></br>
+<input type="button" value="CALCULAR" onclick="salario()">
+</br></br>
+<div id="comissao"> SALARIO FINAL </div>
+</body>
+</html>

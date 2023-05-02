@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		body {
+			background-color: blue;
+		}
+
+	</style>
+	<title>Lista01 Ex06</title>
+</head>
+<body>
+	<div style="color: darkorange;"><h1>Nome: Italo Gabriel de Oliveira</h1></div>
+    <div style="color: darkorange;"><h2>Turma: OADSNM11AC </h2></div>
+	<form>
+		<label for="valorA">Valor A:</label>
+		<input type="number" id="valorA" name="valorA" required>
+		<br>
+		<label for="valorB">Valor B:</label>
+		<input type="number" id="valorB" name="valorB" required>
+		<br>
+		<button type="button" onclick="trocarValores()">Trocar Valores</button>
+	</form>
+	<br>
+	<p id="valoresTrocados"></p>
+	
+	<script>
+		function trocarValores() {
+			let valorA = Number(document.getElementById("valorA").value);
+			let valorB = Number(document.getElementById("valorB").value);
+			let temp = valorA;
+			valorA = valorB;
+			valorB = temp;
+			document.getElementById("valoresTrocados").innerHTML = `Valores trocados: A = ${valorA}, B = ${valorB}`;
+		}
+	</script>
+</body>
+</html>

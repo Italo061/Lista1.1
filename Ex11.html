@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lista1 Ex11</title>
+</head>
+<body>
+	<div style="color: darkorange;"><h1> Nome: Italo Gabriel De Oliveira</h1>
+    <h2> Turma: OADSNM11AC </h2></div>
+
+	<form>
+		<label for="custo">Preço de custo:</label>
+		<input type="number" id="custo" name="custo"><br>
+
+		<label for="acrescimo">Percentual de acréscimo:</label>
+		<input type="number" id="acrescimo" name="acrescimo"><br>
+
+		<button type="button" onclick="calcular()">Calcular</button>
+	</form>
+
+	<p id="resultado"></p>
+
+	<script>
+		function calcular() {
+			var custo = parseFloat(document.getElementById("custo").value);
+			var acrescimo = parseFloat(document.getElementById("acrescimo").value);
+			var venda = custo * (1 + acrescimo/100);
+			document.getElementById("resultado").innerHTML = "Preço de venda: R$" + venda.toFixed(2);
+		}
+	</script>
+
+</body>
+</html>

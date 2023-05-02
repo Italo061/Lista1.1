@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lista1 Ex14</title>
+	<meta charset="UTF-8">
+	<style>
+		body {
+			background-color: blue;
+		}
+
+	</style>
+</head>
+<body>
+    <h1> <div style="color: darkorange;">Nome: Italo Gabriel De Oliveira</h1></div>
+    <h2> <div style="color: darkorange;">Turma: OADSNM11AC </h2></div>
+	<label for="num1">Digite o primeiro número:</label>
+	<input type="number" id="num1">
+	<br><br>
+	<label for="num2">Digite o segundo número:</label>
+	<input type="number" id="num2">
+	<br><br>
+	<button onclick="maior()">Verificar maior número</button>
+	<br><br>
+	<p id="resultado"></p>
+
+	<script>
+		function maior() {
+			var num1 = parseInt(document.getElementById("num1").value);
+			var num2 = parseInt(document.getElementById("num2").value);
+
+			if (num1 > num2) {
+				document.getElementById("resultado").innerHTML = "O primeiro número é o maior: " + num1;
+			} else if (num2 > num1) {
+				document.getElementById("resultado").innerHTML = "O segundo número é o maior: " + num2;
+			} else {
+				document.getElementById("resultado").innerHTML = "Os números são iguais.";
+			}
+		}
+	</script>
+</body>
+</html>

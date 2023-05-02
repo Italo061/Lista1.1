@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head><style>
+	body {
+		background-color: blue;
+	}
+
+</style>
+	<title>Lista1 Ex07</title>
+</head>
+<body>
+	<div style="color: darkorange;"><h1>Nome: Italo Gabriel de Oliveira</h1></div>
+    <div style="color: darkorange;"><h2>Turma: OADSNM11AC</h2></div>
+	<form>
+		<label for="tempC">Temperatura em Celsius:</label>
+		<input type="number" id="tempC" name="tempC" required>
+		<br>
+		<button type="button" onclick="converterTemperatura()">Converter</button>
+	</form>
+	<br>
+	<p id="tempF"></p>
+	
+	<script>
+		function converterTemperatura() {
+			let tempC = Number(document.getElementById("tempC").value);
+			let tempF = (9 * tempC + 160) / 5;
+			document.getElementById("tempF").innerHTML = `Temperatura em Fahrenheit: ${tempF.toFixed(2)}°F`;
+		}
+	</script>
+</body>
+</html>

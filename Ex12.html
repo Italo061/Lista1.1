@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head> 
+    <style>
+		body {
+			background-color: blue;
+		}
+
+	</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista1 Ex12</title>
+    <link rel="stylesheet" href="css/ex012.css">
+    <script language="javascript" type="text/javascript">
+function salario(){
+    var n2 = document.getElementById("valor").value;
+    var n4 = document.getElementById("resultadoo");
+var n7 = Number(n2) * 73 / 100 + (Number (n2));
+  resultadoo.innerHTML = `O valor na fábrica do carro será de ${n2}R$ e o total do carro com os impostos de 73% taxados será de ${n7} R$`;
+}
+
+    </script>
+</head>
+<body>
+    <div style="color: darkorange;"><h1 class="a1"> Nome: Italo Gabriel De Oliveira </br> 
+        Turma: OADSNM11AC</h1></div>
+
+    </br>
+    Valor de fábrica de um carro:  
+    <input type="number" id="valor"></br>
+</br>
+
+
+<input type="button" value="CALCULAR" onclick="salario()">
+</br></br>
+<div id="resultadoo"> Resultado </div>
